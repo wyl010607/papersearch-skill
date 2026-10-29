@@ -1,0 +1,41 @@
+name: Release
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Sanity check（SKILL.md frontmatter + JS/bash 代码块语法 + Python 脚本）
+        run: |
+          set -eu
+          python3 -m py_compile skills/*/scripts/*.py
+          bash -n install.sh check-network.sh
+          python3 validate_skills.py
+          echo "sanity check passed: $(ls -d skills/*/ | wc -l) skills"
+
+      - name: Pack release zip
+        run: |
+          NAME="papersearch-skill-${GITHUB_REF_NAME}"
+          # git archive：打包内容 = tag 里的全部跟踪文件，杜绝手工 cp 清单遗漏
+          git archive --format=zip --prefix="${NAME}/" --output="${NAME}.zip" HEAD
+          sha256sum "${NAME}.zip" > "${NAME}.zip.sha256"
+          echo "packaged ${NAME}.zip:"
+          unzip -l "${NAME}.zip" | tail -3
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            papersearch-skill-*.zip
+            papersearch-skill-*.zip.sha256
+          generate_release_notes: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

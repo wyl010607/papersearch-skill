@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 400" role="img" aria-label="papersearch-skill architecture">
+  <style>
+    .box{fill:#f8fafc;stroke:#64748b;stroke-width:1.5;rx:8}
+    .hot{fill:#e0f2fe;stroke:#0284c7;stroke-width:2}
+    .lbl{font:600 14px sans-serif;fill:#0f172a}
+    .sub{font:12px sans-serif;fill:#475569}
+    .chip{font:12px ui-monospace,Menlo,monospace;fill:#075985}
+    .arrow{stroke:#94a3b8;stroke-width:2;fill:none;marker-end:url(#ah)}
+  </style>
+  <defs>
+    <marker id="ah" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#94a3b8"/>
+    </marker>
+  </defs>
+
+  <text x="16" y="26" class="lbl" font-size="16">🔍 检索 —— research-lit 多源编排</text>
+  <g>
+    <rect class="box" x="16" y="40" width="86" height="28" rx="8"/><text class="chip" x="30" y="59">arXiv</text>
+    <rect class="box" x="16" y="76" width="86" height="28" rx="8"/><text class="chip" x="30" y="95">S2 API</text>
+    <rect class="box" x="16" y="112" width="86" height="28" rx="8"/><text class="chip" x="30" y="131">OpenAlex</text>
+    <rect class="box" x="16" y="148" width="86" height="28" rx="8"/><text class="chip" x="30" y="167">Scholar</text>
+    <rect class="box" x="16" y="184" width="86" height="28" rx="8"/><text class="chip" x="30" y="203">知网</text>
+    <rect class="box" x="16" y="220" width="86" height="28" rx="8"/><text class="chip" x="28" y="239">web/本地</text>
+    <path class="arrow" d="M102,130 L150,130"/>
+    <rect class="hot" x="152" y="96" width="150" height="68" rx="10"/>
+    <text class="lbl" x="168" y="122" font-size="15">research-lit</text>
+    <text class="sub" x="168" y="142">归一化·去重·核验</text>
+    <text class="sub" x="168" y="158">多源综述编排</text>
+    <path class="arrow" d="M302,130 L352,130"/>
+    <rect class="box" x="354" y="58" width="150" height="30" rx="8"/><text class="sub" x="368" y="78">📄 文献表格 + 综述</text>
+    <rect class="box" x="354" y="98" width="150" height="30" rx="8"/><text class="sub" x="368" y="118">🔤 验证过的 BibTeX</text>
+    <rect class="box" x="354" y="138" width="150" height="30" rx="8"/><text class="sub" x="368" y="158">🇨🇳 GB/T 7714 / Zotero</text>
+  </g>
+
+  <text x="16" y="292" class="lbl" font-size="16">📥 下载 —— paper-download 两层路由</text>
+  <g>
+    <rect class="box" x="16" y="306" width="120" height="34" rx="8"/><text class="chip" x="30" y="328">DOI / arXiv ID</text>
+    <path class="arrow" d="M136,323 L178,323"/>
+    <rect class="hot" x="180" y="298" width="230" height="50" rx="10"/>
+    <text class="lbl" x="196" y="318" font-size="14">① OA 纯 HTTP 层（秒级）</text>
+    <text class="sub" x="196" y="336">本地→arXiv→Unpaywall→出版社模板</text>
+    <path class="arrow" d="M410,323 L452,323"/>
+    <rect class="box" x="454" y="306" width="150" height="34" rx="8"/><text class="sub" x="470" y="328">✅ PDF 落盘 + 魔数校验</text>
+    <path class="arrow" d="M295,348 L295,368 L520,368 L520,344" stroke-dasharray="5,4"/>
+    <text class="sub" x="330" y="364">needs_browser（订阅墙）</text>
+    <rect class="hot" x="540" y="298" width="250" height="50" rx="10"/>
+    <text class="lbl" x="556" y="318" font-size="14">② 浏览器层 · 校园网订阅</text>
+    <text class="sub" x="556" y="336">chrome-devtools-mcp 驱动你的 Chrome</text>
+    <path class="arrow" d="M790,323 L812,323"/>
+    <rect class="box" x="700" y="344" width="150" height="34" rx="8"/><text class="sub" x="716" y="366">✅ PDF 落盘</text>
+    <path class="arrow" d="M790,323 L800,323"/>
+  </g>
+</svg>

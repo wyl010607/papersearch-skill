@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.pyc
+
+# Downloaded papers / local libraries
+papers/
+literature/
+
+# Secrets
+.env
+.Codex/.env
+
+# Third-party reference clones (local only)
+.reference/
+
+# OS / editor
+.DS_Store
+
+# Local build artifacts
+dist/
